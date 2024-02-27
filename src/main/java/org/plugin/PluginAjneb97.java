@@ -39,7 +39,7 @@ public final class PluginAjneb97 extends JavaPlugin {
         registerMessages();
         RepeatingListener tarea1 = new RepeatingListener(this,2400);
         tarea1.ejecucion();
-        players =  new ArrayList<String>(players);
+        players =  new ArrayList<String>();
     }
 
     @Override
@@ -119,7 +119,7 @@ public final class PluginAjneb97 extends JavaPlugin {
     }
 
     public void removePlayer(Player player){
-        player.remove();
+        players.remove(player.getName());
     }
 
     public boolean playerIsOnThisList(Player player){

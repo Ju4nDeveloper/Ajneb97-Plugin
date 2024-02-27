@@ -32,9 +32,10 @@ public class SpawnCommand implements CommandExecutor {
                     Location location = new Location(player.getWorld(), 0.500, 63, 0.500, 90, -1);
                     Countdown countdown = new Countdown(plugin, 5, player, location);
                     countdown.ejecucion();
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&c&l[TELETRANSPORTANDOSE] &cAl spawm"));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&c&l[TELETRANSPORTANDOSE] &cAl spawm en: "));
                 }else {
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&cEste comando ya esta en proceso"));
+                    plugin.removePlayer(player);
                 }
             } else {
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&cEl comando no esta activado en este momento"));

@@ -13,7 +13,7 @@ public class ChatListener implements Listener {
         Player player = event.getPlayer();
         String message = event.getMessage().toLowerCase();
         boolean edited = false;
-        String[] block = {"hack", "choto", "joder", "mierda", "gilipolla", "pene",  "polla", "put", "coño", "chocho", "porno", "hostia", "cag", "cojones", "clitoris", "paja", "masturbarse", "orto", "foll", "sexo", "chup", "cabron", "culo", "jaqueline", "fuck", "suck", "ez", "cagon"};
+        String[] block = {"hack", "choto", "escroto", "joder", "mierda", "gilipolla", "pene",  "polla", "put", "coño", "chocho", "porno", "hostia", "cag", "cojones", "clitoris", "paja", "masturbarse", "orto", "foll", "sexo", "chup", "cabron", "culo", "jaqueline", "fuck", "suck", "ez", "cagon"};
         for (int i=0;i<block.length;i++){
             if (message.contains(block[i])){
                 String a = "";

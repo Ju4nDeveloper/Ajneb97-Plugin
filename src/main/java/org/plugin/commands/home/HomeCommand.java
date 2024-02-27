@@ -39,9 +39,10 @@ public class HomeCommand implements CommandExecutor {
                     Location location = new Location(world, x, y, z, yaw, pitch);
                     Countdown countdown = new Countdown(plugin,5, player, location);
                     countdown.ejecucion();
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&c&l[TELETRANSPORTANDOSE] &cA la home"));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&c&l[TELETRANSPORTANDOSE] &cA la home en: "));
                 }else {
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&cEste comando ya esta en proceso"));
+                    plugin.removePlayer(player);
                 }
 
             } else {

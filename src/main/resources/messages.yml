@@ -1,0 +1,34 @@
+Messages:
+    mensaje-bienvenida:
+    - "&n"
+    - "&f&lBienvenido al servidor de &8&oJuanDev"
+    - "&n                                          "
+    - "&n"
+    - "&4&lYoutube: &chttps://youtube.com/Aurora"
+    - "&1&lDiscord: &9https://discord.gg/rhNPjqDCqa"
+    - "&7&lWeb: &7https://discord.gg/rhNPjqDCqa"
+    - "&n                                          "
+    - "&n"
+    TIPS:
+        ANNOUNCEMENTS:
+           MESSAGE-1:
+                  - " "
+                  - "                 &6&l¿SERVIDOR COMPLETO?"
+                  - ""
+                  - "    &eEntra &6&lCUANDO QUIERAS &eaunque esté lleno el"
+                  - "  &eservidor comprando un &6&lRANGO&e: &f&nstore.synthmc.net"
+                  - " "
+           MESSAGE-2:
+                  - " "
+                  - "                &e&l¿CÓMO COMPRO UN RANGO?"
+                  - ""
+                  - "    &fNecesitarás Coins, la moneda virtual de &6&lSynthMC&f,"
+                  - "            &fcompralas aquí: &f&nstore.synthmc.net"
+                  - " "
+           MESSAGE-3:
+                  - " "
+                  - "            &9&l¿BUSCANDO CON QUIEN JUGAR?"
+                  - ""
+                  - "    &3Únete a nuestro servidor de &9&lDiscord &3con el"
+                  - "         &3siguiente enlace: &f&ndiscord.synthmc.net"
+                  - " "

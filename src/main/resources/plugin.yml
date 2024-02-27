@@ -1,0 +1,29 @@
+name: pluginAjneb97
+version: 1.0
+main: org.plugin.PluginAjneb97
+api-version: '1.18'
+
+commands:
+  youtube:
+    Description: El comando youtube de mi plugin
+  plugin:
+    description: El comando principal de mi plugin
+  spawn:
+    description: El comando spawn de mi plugin
+  home:
+    description: El comando home de mi plugin
+  sethome:
+    description: El comando sethome de mi plugin
+  delhome:
+    description: El comando delhome de mi plugin
+  entity:
+    description: El comando entidades de mi plugin
+  report:
+    description: El comando report de mi plugin
+  discord:
+    description: El comando discord de mi plugin
+  web:
+    description: El comando web de mi plugin
+  inventory:
+    description: El comando inventory de mi plugin
+

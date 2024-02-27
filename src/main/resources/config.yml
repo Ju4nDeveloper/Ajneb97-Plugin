@@ -1,0 +1,16 @@
+Config:
+  Mensaje:
+    bienvenida: true
+  TIPS:
+    MESSAGE-1: true
+    MESSAGE-2: true
+    MESSAGE-3: true
+  Spawn:
+    spawn: true
+  Kill:
+    kill-entity: true
+    kill-player: true
+  Principal-command:
+    version: true
+    commands: true
+    reload: true

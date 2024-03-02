@@ -29,7 +29,7 @@ public class Countdown {
                     player.teleport(location);
                     plugin.removePlayer(player);
                 }else {
-                    player.sendMessage("" + tiempo);
+                    player.sendMessage(String.valueOf(tiempo));
                     tiempo--;
                 }
             }

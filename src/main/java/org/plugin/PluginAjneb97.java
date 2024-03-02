@@ -59,6 +59,7 @@ public final class PluginAjneb97 extends JavaPlugin {
         this.getCommand("report").setExecutor(new ReportCommand(this));
         this.getCommand("discord").setExecutor(new DiscordCommand(this));
         this.getCommand("web").setExecutor(new WebCommand(this));
+        this.getCommand("recompensa").setExecutor(new RewardCommand(this));
     }
     @EventHandler
     public void registerEvents(){
@@ -67,6 +68,7 @@ public final class PluginAjneb97 extends JavaPlugin {
         pluginManager.registerEvents(new KillEntityListener(this), this);
         pluginManager.registerEvents(new InventoryListener(this), this);
         pluginManager.registerEvents(new ChatListener(), this);
+        pluginManager.registerEvents(new CooldownListener(this),this);
 
     }
     
@@ -123,10 +125,6 @@ public final class PluginAjneb97 extends JavaPlugin {
     }
 
     public boolean playerIsOnThisList(Player player){
-        if (players.contains(player.getName())){
-            return true;
-        }else {
-            return false;
-        }
+        return players.contains(player.getName());
     }
 }

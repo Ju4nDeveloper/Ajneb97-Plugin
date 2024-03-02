@@ -2,11 +2,12 @@ package org.plugin.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.DyeColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.*;
 import org.bukkit.event.Listener;
 import org.plugin.PluginAjneb97;
 import org.plugin.listener.KillEntityListener;
@@ -14,7 +15,6 @@ import org.plugin.listener.KillEntityListener;
 public class EntityCommands implements CommandExecutor {
 
     private final PluginAjneb97 plugin;
-
     public EntityCommands(PluginAjneb97 plugin) {
         this.plugin = plugin;
     }
@@ -37,6 +37,8 @@ public class EntityCommands implements CommandExecutor {
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&7Usa /entity vaca para ver las vacas matadas"));
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&7Usa /entity cerdo para ver los cerdos matados"));
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&7Usa /entity pollo para ver los pollos matados"));
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&n                                                "));
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&7Usa /entity spawn [nombre_entidad-español] "));
             } else {
                 if (args[0].equalsIgnoreCase("player")) {
                     path = path + ".playerKills";
@@ -117,7 +119,60 @@ public class EntityCommands implements CommandExecutor {
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&',""));
                     player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&7&lHas matado ha: " + kills + " pollo"));
 
-                } else {
+                } else if (args[0].equalsIgnoreCase("spawn pollo")) {
+                    LivingEntity entidad = (LivingEntity) player.getWorld().spawnEntity(player.getLocation(), EntityType.CHICKEN);
+                    Chicken pollo = (Chicken) entidad;
+
+                } else if (args[0].equalsIgnoreCase("spawn vaca")) {
+                    LivingEntity entidad = (LivingEntity) player.getWorld().spawnEntity(player.getLocation(), EntityType.COW);
+                    Cow vaca = (Cow) entidad;
+
+                } else if (args[0].equalsIgnoreCase("spawn cerdo")) {
+                    LivingEntity entidad = (LivingEntity) player.getWorld().spawnEntity(player.getLocation(), EntityType.PIG);
+                    Pig cerdo = (Pig) entidad;
+
+                } else if (args[0].equalsIgnoreCase("spawn zombie")) {
+                    LivingEntity entidad = (LivingEntity) player.getWorld().spawnEntity(player.getLocation(), EntityType.ZOMBIE);
+                    Zombie zombie = (Zombie) entidad;
+                    //entidad.getEquipment().setItemHand(new ItemmStack(Material.IRON_AXE,1));
+                    //entidad.setPassenger(entidad);
+
+                } else if (args[0].equalsIgnoreCase("spawn araña")) {
+                    LivingEntity entidad = (LivingEntity) player.getWorld().spawnEntity(player.getLocation(), EntityType.SPIDER);
+                    Spider araña = (Spider) entidad;
+
+                } else if (args[0].equalsIgnoreCase("spawn golem")) {
+                    LivingEntity entidad = (LivingEntity) player.getWorld().spawnEntity(player.getLocation(), EntityType.IRON_GOLEM);
+                    IronGolem golem = (IronGolem) entidad;
+
+                } else if (args[0].equalsIgnoreCase("spawn blaze")) {
+                    LivingEntity entidad = (LivingEntity) player.getWorld().spawnEntity(player.getLocation(), EntityType.BLAZE);
+                    Blaze blaze = (Blaze) entidad;
+
+                } else if (args[0].equalsIgnoreCase("spawn bruja")) {
+                    LivingEntity entidad = (LivingEntity) player.getWorld().spawnEntity(player.getLocation(), EntityType.WITCH);
+                    Witch bruja = (Witch) entidad;
+
+                } else if (args[0].equalsIgnoreCase("spawn creeper")) {
+                    LivingEntity entidad = (LivingEntity) player.getWorld().spawnEntity(player.getLocation(), EntityType.CREEPER);
+                    Creeper creeper = (Creeper) entidad;
+
+                } else if (args[0].equalsIgnoreCase("spawn esqueleto")) {
+                    LivingEntity entidad = (LivingEntity) player.getWorld().spawnEntity(player.getLocation(), EntityType.SKELETON);
+                    Skeleton esqueleto = (Skeleton) entidad;
+
+                } else if (args[0].equalsIgnoreCase("spawn guardian")) {
+                    LivingEntity entidad = (LivingEntity) player.getWorld().spawnEntity(player.getLocation(), EntityType.GUARDIAN);
+                    Guardian guardian = (Guardian) entidad;
+
+                } else if (args[0].equalsIgnoreCase("spawn oveja")) {
+                    LivingEntity entidad = (LivingEntity) player.getWorld().spawnEntity(player.getLocation(), EntityType.SHEEP);
+                    Sheep oveja = (Sheep) entidad;
+                    oveja.setColor(DyeColor.ORANGE);
+                    oveja.setBaby();
+                    oveja.setCustomName(ChatColor.translateAlternateColorCodes('&', "&6&lmadre de oval"));
+                    oveja.setCustomNameVisible(true);
+                }else {
                     player.sendMessage("Entidad no encontrada");
                 }
             }

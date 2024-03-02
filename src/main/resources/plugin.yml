@@ -26,4 +26,6 @@ commands:
     description: El comando web de mi plugin
   inventory:
     description: El comando inventory de mi plugin
+  recompensa:
+    description: El comando recompensa de mi plugin
 

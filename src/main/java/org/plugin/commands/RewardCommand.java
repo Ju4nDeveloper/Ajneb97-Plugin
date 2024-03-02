@@ -26,7 +26,7 @@ public class RewardCommand implements CommandExecutor {
         FileConfiguration config = plugin.getConfig();
 
         if (!(sender instanceof Player)) {
-            Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "[" + plugin.getName() + "]" + ChatColor.RED + " No puedes ejecutar comandos desde la consola");
+            Bukkit.getConsoleSender().sendMessage(MessageUtils.getColoredMessage("&6["+ plugin.getName() + "]" + "&c No puedes ejecutar comandos desde la consola"));
             return true;
         }
 
@@ -35,14 +35,13 @@ public class RewardCommand implements CommandExecutor {
         CooldownListener c = new CooldownListener(plugin);
         String cooldown = c.getCooldown(player);
 
-        if (c.getCooldown(player).equals("-1")) {
+        if (cooldown.equals("-1")) {
             long millis = System.currentTimeMillis();
             config.set(pathtime, millis);
             plugin.saveConfig();
 
             player.sendMessage(MessageUtils.getColoredMessage("&a&lAcabas de recibir tu recompensa diaría!"));
             player.getInventory().addItem(new ItemStack(Material.DIAMOND, 10));
-        } else {
         }
         return true;
     }

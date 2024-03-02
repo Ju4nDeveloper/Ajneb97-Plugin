@@ -11,6 +11,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.plugin.PluginAjneb97;
 import org.plugin.countdown.Countdown;
+import org.plugin.utils.MessageUtils;
 
 public class HomeCommand implements CommandExecutor {
     private final PluginAjneb97 plugin;
@@ -21,7 +22,7 @@ public class HomeCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         if (!(sender instanceof Player)) {
-            Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&e[" + plugin.getName() + "] &cNo puedes ejecutar comandos desde la consola"));
+            Bukkit.getConsoleSender().sendMessage(MessageUtils.getColoredMessage("&e[" + plugin.getName() + "] &cNo puedes ejecutar comandos desde la consola"));
         } else {
             Player player = (Player) sender;
             FileConfiguration config = plugin.getConfig();
@@ -39,14 +40,14 @@ public class HomeCommand implements CommandExecutor {
                     Location location = new Location(world, x, y, z, yaw, pitch);
                     Countdown countdown = new Countdown(plugin,5, player, location);
                     countdown.ejecucion();
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&c&l[TELETRANSPORTANDOSE] &cA la home en: "));
+                    player.sendMessage(MessageUtils.getColoredMessage("&c&l[TELETRANSPORTANDOSE] &cA la home en: "));
                 }else {
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&cEste comando ya esta en proceso"));
+                    player.sendMessage(MessageUtils.getColoredMessage("&cEste comando ya esta en proceso"));
                     plugin.removePlayer(player);
                 }
 
             } else {
-                player.sendMessage(ChatColor.RED + "Tu home no existe usa /sethome para marcar tu home");
+                player.sendMessage(MessageUtils.getColoredMessage("&cTu home no existe usa /sethome para marcar tu home"));
             }
 
         }

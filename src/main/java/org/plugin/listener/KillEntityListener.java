@@ -16,6 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.material.Skull;
 import org.plugin.PluginAjneb97;
+import org.plugin.utils.MessageUtils;
 
 public class KillEntityListener implements Listener {
     private final PluginAjneb97 plugin;
@@ -73,11 +74,11 @@ public class KillEntityListener implements Listener {
         if (entidad.getType().equals(EntityType.COW)) {
             Cow vaca = (Cow) entidad;
             if (!vaca.isAdult() && entidad.getCustomName().equals("itemperus")) {
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&', "Hola! Soy la vaca Itemperus"));
+                player.sendMessage(MessageUtils.getColoredMessage("Hola! Soy la vaca Itemperus"));
                 ItemStack item = new ItemStack(Material.PLAYER_HEAD);
                 SkullMeta meta = (SkullMeta) item.getItemMeta();
-                meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', "&cCabeza de &4Itemperus"));
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&aHas conseguido una cabeza de &cItemperus &a!!!"));
+                meta.setDisplayName(MessageUtils.getColoredMessage("&cCabeza de &4Itemperus"));
+                player.sendMessage(MessageUtils.getColoredMessage("&aHas conseguido una cabeza de &cItemperus &a!!!"));
                 meta.setOwner("MHF_Cow");
                 item.setItemMeta(meta);
                 player.getInventory().addItem(item);

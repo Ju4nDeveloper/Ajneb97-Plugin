@@ -9,6 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.plugin.PluginAjneb97;
+import org.plugin.utils.MessageUtils;
 
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +44,7 @@ public class EnterListener implements Listener {
 
             for (int i=0; i < mensaje.size(); i++ ){
                 String texto = mensaje.get(i);
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&', texto.replaceAll("%player%", player.getName())));
+                player.sendMessage(MessageUtils.getColoredMessage(texto.replaceAll("%player%", player.getName())));
             }
         }
     }

@@ -10,6 +10,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.plugin.PluginAjneb97;
 import org.plugin.countdown.Countdown;
+import org.plugin.utils.MessageUtils;
 
 public class SpawnCommand implements CommandExecutor {
     private final PluginAjneb97 plugin;
@@ -23,7 +24,7 @@ public class SpawnCommand implements CommandExecutor {
         String spawn = "Config.Spawn.spawn";
         Player player = (Player) sender;
         if (!(sender instanceof Player)){
-            Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "["+ plugin.getName() + "]" + ChatColor.RED + " No puedes ejecutar comandos desde la consola");
+            Bukkit.getConsoleSender().sendMessage(MessageUtils.getColoredMessage("&6["+ plugin.getName() + "]" + "&c No puedes ejecutar comandos desde la consola"));
 
         }else {
             if (config.contains(spawn) && config.getBoolean(spawn)){
@@ -32,13 +33,13 @@ public class SpawnCommand implements CommandExecutor {
                     Location location = new Location(player.getWorld(), 0.500, 63, 0.500, 90, -1);
                     Countdown countdown = new Countdown(plugin, 5, player, location);
                     countdown.ejecucion();
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&c&l[TELETRANSPORTANDOSE] &cAl spawm en: "));
+                    player.sendMessage(MessageUtils.getColoredMessage("&c&l[TELETRANSPORTANDOSE] &cAl spawm en: "));
                 }else {
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&cEste comando ya esta en proceso"));
+                    player.sendMessage(MessageUtils.getColoredMessage("&cEste comando ya esta en proceso"));
                     plugin.removePlayer(player);
                 }
             } else {
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&cEl comando no esta activado en este momento"));
+                player.sendMessage(MessageUtils.getColoredMessage("&cEl comando no esta activado en este momento"));
             }
         }
         return true;

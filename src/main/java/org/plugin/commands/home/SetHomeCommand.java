@@ -9,6 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.plugin.PluginAjneb97;
+import org.plugin.utils.MessageUtils;
 
 public class SetHomeCommand implements CommandExecutor {
 
@@ -19,7 +20,7 @@ public class SetHomeCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)){
-            Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&e[" + plugin.getName()+ "] &cNo puedes ejecutar comandos desde la consola"));
+            Bukkit.getConsoleSender().sendMessage(MessageUtils.getColoredMessage("&e[" + plugin.getName()+ "] &cNo puedes ejecutar comandos desde la consola"));
         }else {
             Player player = (Player) sender;
             Location l = player.getLocation();
@@ -38,7 +39,7 @@ public class SetHomeCommand implements CommandExecutor {
             config.set(path + "pitch", pitch);
             config.set(path + "world", world);
             plugin.saveConfig();
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&a La home ha sido cambiada correctamente"));
+            player.sendMessage(MessageUtils.getColoredMessage("&a La home ha sido cambiada correctamente"));
         }
         return false;
     }

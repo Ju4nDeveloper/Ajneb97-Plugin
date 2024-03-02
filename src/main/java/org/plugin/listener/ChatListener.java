@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.plugin.utils.MessageUtils;
 
 public class ChatListener implements Listener {
     @EventHandler
@@ -32,6 +33,6 @@ public class ChatListener implements Listener {
             event.setMessage(message);
         }
 
-        event.setFormat(ChatColor.translateAlternateColorCodes('&', "&8[&8&lUsuario&8] &7" + player.getName()+ "&7 >> " + message));
+        event.setFormat(MessageUtils.getColoredMessage("&8[&8&lUsuario&8] &7" + player.getName()+ "&7 >> " + message));
     }
 }

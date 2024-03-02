@@ -4,6 +4,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.plugin.PluginAjneb97;
+import org.plugin.utils.MessageUtils;
 
 public class CooldownListener implements Listener {
     private PluginAjneb97 plugin;
@@ -47,20 +48,22 @@ public class CooldownListener implements Listener {
                     time = esperatotalhour + "h" + " " + time;
                 }
 
+
                 //Aun no se termina el cooldown
-                player.sendMessage("Puedes reclamar otra recompensa diaria dentro de " + time);
+                player.sendMessage(MessageUtils.getColoredMessage("&cPuedes reclamar otra recompensa diaria dentro de &7" + time));
+                return time;
             } else {
                 //Ya se termino el cooldown
                 player.sendMessage("Acabas de recibir la recompensa diaria nuevamente");
                 config.set(pathtime, millis);
                 plugin.saveConfig();
+                return "-1";
             }
         } else {
             //Usa el comando por primera vez, ya que no existe el path en la config
             return "-1";
 
         }
-        return pathtime;
     }
 
 

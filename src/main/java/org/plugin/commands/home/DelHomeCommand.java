@@ -10,6 +10,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.plugin.PluginAjneb97;
+import org.plugin.utils.MessageUtils;
 import sun.security.krb5.Config;
 
 
@@ -26,7 +27,7 @@ public class DelHomeCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            Bukkit.getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&e[" + plugin.getName() + "] &cNo puedes ejecutar comandos desde la consola"));
+            Bukkit.getConsoleSender().sendMessage(MessageUtils.getColoredMessage("&e[" + plugin.getName() + "] &cNo puedes ejecutar comandos desde la consola"));
         } else {
             Player player = (Player) sender;
             FileConfiguration config = plugin.getConfig();
@@ -35,9 +36,9 @@ public class DelHomeCommand implements CommandExecutor {
             if (config.contains(path + ".x")) {
                 config.set(path, null);
                 plugin.saveConfig();
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&a&lLa home ha sido eliminada correctamente" ));
+                player.sendMessage(MessageUtils.getColoredMessage("&a&lLa home ha sido eliminada correctamente" ));
             } else {
-                player.sendMessage(ChatColor.RED + "Tu home no existe usa /sethome para marcar tu home");
+                player.sendMessage(MessageUtils.getColoredMessage("&cTu home no existe usa /sethome para marcar tu home"));
             }
 
         }

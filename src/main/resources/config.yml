@@ -14,3 +14,22 @@ Config:
     version: true
     commands: true
     reload: true
+BlockEvents:
+    destroy_blocks:
+    - world
+    build_blocks:
+    - world
+    chat:
+    - world
+    pvp:
+    - world
+ScoreBoard:
+  ticks: 10
+  title: "&d&lZJUAN&fDEV"
+  text:
+  - "&7&luser: &c&l%player%"
+  - "&fX: &a%coord_x%"
+  - "&fY: &a%coord_y%"
+  - "&fZ: &a%coord_z%"
+  - "&3-&f-&3-&f-&3-&f-&3-&f-&3-&f-"
+  - "&a   github.com/Ju4nDveloper   "

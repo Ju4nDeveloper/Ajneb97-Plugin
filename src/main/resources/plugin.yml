@@ -1,6 +1,6 @@
 name: pluginAjneb97
 version: 1.0
-main: org.plugin.PluginAjneb97
+main: me.hub.PluginAjneb97
 api-version: '1.18'
 
 commands:
@@ -28,4 +28,8 @@ commands:
     description: El comando inventory de mi plugin
   recompensa:
     description: El comando recompensa de mi plugin
+  mute:
+    description: El comando mute de mi plugin
+  unmute:
+    description: El comando unmute de mi plugin
 
